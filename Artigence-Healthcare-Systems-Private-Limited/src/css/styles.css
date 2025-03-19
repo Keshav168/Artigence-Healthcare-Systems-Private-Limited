@@ -1,0 +1,199 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+}
+
+header {
+    text-align: center;
+    padding: 10px;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+}
+
+header h1 {
+    font-size: 24px;
+}
+
+header p {
+    font-size: 14px;
+    color: #666;
+}
+
+.container {
+    display: flex;
+    height: calc(100vh - 60px - 50px); /* Subtract header and footer */
+}
+
+/* Left Panel */
+.left-panel {
+    width: 25%;
+    padding: 20px;
+    background-color: #fff;
+    border-right: 1px solid #ccc;
+    overflow-y: auto;
+}
+
+.back-btn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+.section h2 {
+    background-color: #90EE90;
+    padding: 5px;
+    font-size: 16px;
+}
+
+.section table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.section th, .section td {
+    border: 1px solid #ccc;
+    padding: 5px;
+    text-align: center;
+}
+
+.section th {
+    background-color: #f0f0f0;
+}
+
+/* Central Panel */
+.central-panel {
+    width: 50%;
+    position: relative;
+}
+
+#wsi-viewer {
+    width: 100%;
+    height: 100%;
+}
+
+#overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+/* Right Panel */
+.right-panel {
+    width: 25%;
+    padding: 20px;
+    background-color: #fff;
+    border-left: 1px solid #ccc;
+}
+
+.hub-view h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+#hub-viewer {
+    position: relative;
+    width: 100%;
+    height: 200px;
+}
+
+#hub-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+#hub-pointer {
+    position: absolute;
+    border: 2px solid blue;
+    pointer-events: none;
+}
+
+.patient-info {
+    margin-top: 20px;
+}
+
+.patient-info p {
+    font-size: 14px;
+}
+
+/* Footer */
+footer {
+    text-align: right;
+    padding: 10px;
+    background-color: #fff;
+    border-top: 1px solid #ccc;
+}
+
+.report-btn {
+    padding: 5px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.report-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .left-panel, .central-panel, .right-panel {
+        width: 100%;
+    }
+
+    .left-panel, .right-panel {
+        display: none;
+    }
+
+    .central-panel {
+        height: 50vh;
+    }
+}
+#wsi-viewer {
+    width: 100%;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+    background-color: #f0f0f0;
+}
+
+#overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 500px;
+    pointer-events: none; /* Allow cursor to interact with OpenSeadragon */
+}
+
+#hub-image {
+    width: 200px;
+    height: 100px;
+    border: 1px solid #ccc;
+}
+
+#hub-pointer {
+    position: absolute;
+    border: 2px solid blue;
+    pointer-events: none;
+}
